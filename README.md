@@ -14,3 +14,5 @@ You need [node-compose](https://www.npmjs.com/package/node-compose) to be instal
 $ node-compose
 node-compose $ start all
 ```
+
+Open your browser at [http://localhost:8090](http://localhost:8090).
