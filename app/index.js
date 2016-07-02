@@ -3,6 +3,7 @@
 
 var Hapi = require('hapi');
 var httpProxy = require('http-proxy');
+var url = require('url');
 
 var server = new Hapi.Server();
 
@@ -34,12 +35,23 @@ server.register([
 		path: '/ws/',
 		handler: {
 			proxy: {
-				host: '127.0.0.1',
-				port: '8080',
-				passThrough: true
+				passThrough: true,
+				mapUri: function(req, cb) {
+
+					req.url.hostname = 'localhost';
+					req.url.port = 8080;
+
+					let uri = 'http:'+url.format(req.url);
+
+					req.headers.authorization = 'd5R0wk3AsjOCoNHSBHmXDg9cK2YhG0fLgZygGDlLunsvGihbdrry5KWCOslE5KSy';
+
+					cb(null, uri, req.headers);
+				}
 			}
 		}
 	});
+
+
 
 	server.listener.on('upgrade', function(req, socket, head) {
 		if(req.url.substr(0, 4) === '/ws/' && req.headers.upgrade === 'websocket') {
