@@ -1,16 +1,16 @@
 'use strict';
 
 
-var Hapi = require('hapi');
-var httpProxy = require('http-proxy');
-var url = require('url');
+const Hapi = require('hapi');
+const httpProxy = require('http-proxy');
+const url = require('url');
 
-var server = new Hapi.Server();
+const server = new Hapi.Server();
 
 server.connection({
-	host: '0.0.0.0',
+	host: '127.0.0.1',
 	port: 8090
-})
+});
 
 
 
