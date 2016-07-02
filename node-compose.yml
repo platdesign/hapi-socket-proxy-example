@@ -1,0 +1,8 @@
+api:
+  build: ./api
+  environment:
+    - NODE_ENV=development
+app:
+  build: ./app
+  environment:
+    - NODE_ENV=development

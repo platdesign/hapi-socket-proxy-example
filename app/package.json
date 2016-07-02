@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "description": "A project by platdesign.de",
+  "author": "Christian Blaschke <mail@platdesign.de>",
+  "version": "0.0.0",
+  "dependencies": {
+    "h2o2": "^5.1.0",
+    "inert": "^4.0.0"
+  },
+  "repository": ""
+}
