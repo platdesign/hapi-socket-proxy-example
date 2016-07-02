@@ -5,6 +5,8 @@
   "version": "0.0.0",
   "dependencies": {
     "h2o2": "^5.1.0",
+    "hapi": "^13.4.1",
+    "http-proxy": "^1.14.0",
     "inert": "^4.0.0"
   },
   "repository": ""
